@@ -8,3 +8,10 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Fondo(models.Model):
+    name = models.CharField(max_length=100)
+    image = CloudinaryField('image')
+
+    def __str__(self):
+        return self.name
