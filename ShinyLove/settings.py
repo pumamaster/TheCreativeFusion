@@ -27,10 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-^v%a0qesvgk&x_-@q^d6#^#sv()+1-7ua13*$dgmfrc^f9&bh$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.10', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['thecreativefusion.com','www.thecreativefusion.com']
 
+CSRF_TRUSTED_ORIGINS = [
+	'https://thecreativefusion.com',
+	'https://www.thecreativefusion.com',
+]
 
 # Application definition
 
@@ -56,7 +60,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "ShinyLove.urls"
+ROOT_URLCONF='ShinyLove.urls'
 
 TEMPLATES = [
     {
@@ -128,13 +132,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # URL para acceder a los archivos estáticos
 STATIC_URL = '/static/'
 
-# Directorio donde se almacenan los archivos estáticos
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# Directorio donde se almacenan los archivos estáticos]
 
-# Directorio donde se recopilan los archivos estáticos para producción
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT =os.path.join(BASE_DIR,'staticfiles')
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -149,3 +150,5 @@ cloudinary.config(
   api_key = "182274622235247",
   api_secret = "4uUT8NfK-3G8RiQb2RlFrQRVW6s"
 )
+
+ROOT_URLCONF='ShinyLove.urls'
