@@ -5,7 +5,6 @@ venv/
 # Archivos de variables de entorno
 .env
 
-
 # Migraciones generadas localmente (opcional)
 */migrations/
 
